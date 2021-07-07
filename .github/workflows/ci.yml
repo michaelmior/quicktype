@@ -63,4 +63,5 @@ jobs:
     - uses: ruby/setup-ruby@v1
 
     - run: npm install
+    - run: pip install mypy python-dateutil
     - run: FIXTURE=${{ matrix.fixture }} npm test
