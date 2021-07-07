@@ -52,5 +52,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
+
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+    - uses: fwilhe2/setup-kotlin@0.2.0
+    - uses: jorelali/setup-elm@v3
+    - uses: ruby/setup-ruby@v1
+
     - run: npm install
     - run: FIXTURE=${{ matrix.fixture }} npm test
