@@ -60,6 +60,9 @@ jobs:
         toolchain: stable
     - uses: dart-lang/setup-dart@v1
     - uses: fwilhe2/setup-kotlin@0.2.0
+    - uses: haskell/actions/setup@v1
+      with:
+        enable-stack: true
     - uses: jorelali/setup-elm@v3
     - uses: ruby/setup-ruby@v1
 
