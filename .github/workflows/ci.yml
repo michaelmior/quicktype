@@ -1,0 +1,56 @@
+name: CI
+on:
+  push:
+  pull_request:
+    branches:
+      - master
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        fixture:
+          - cplusplus
+          - schema-cplusplus
+          - kotlin
+          - schema-kotlin
+          - kotlin-jackson
+          - schema-kotlin-jackson
+          - graphql
+          - java
+          - schema-java
+          - schema-json-csharp
+          - typescript
+          - schema-typescript
+          - javascript
+          - schema-javascript
+          - flow
+          - schema-flow
+          - json-ts-csharp
+          - python
+          - schema-python
+          - swift
+          - schema-swift
+          - rust
+          - schema-rust
+          - elm
+          - schema-elm
+          - dart
+          - schema-dart
+          - csharp
+          - schema-csharp
+          - ruby
+          - schema-ruby
+          - golang
+          - schema-golang
+          - pike
+          - schema-pike
+          - haskell
+          - schema-haskell
+          - javascript-prop-types
+    name: ${{ matrix.fixture }} tests
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+    - run: npm install
+    - run: FIXTURE=${{ matrix.fixture }} npm test
