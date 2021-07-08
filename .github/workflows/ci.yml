@@ -69,6 +69,8 @@ jobs:
     - uses: jorelali/setup-elm@v3
     - uses: ruby/setup-ruby@v1
 
+    - run: sudo apt install -y libboost-all-dev pike8.0-full
+
     - run: npm install
     - run: pip3.6 install mypy python-dateutil
     - run: FIXTURE=${{ matrix.fixture }} npm test
