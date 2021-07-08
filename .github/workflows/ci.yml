@@ -48,6 +48,7 @@ jobs:
           - haskell
           - schema-haskell
           - javascript-prop-types
+      fail-fast: false
     name: ${{ matrix.fixture }} tests
     steps:
     - uses: actions/checkout@v2
