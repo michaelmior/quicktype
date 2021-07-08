@@ -55,6 +55,9 @@ jobs:
       with:
         node-version: '12'
 
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.6'
     - uses: actions-rs/toolchain@v1
       with:
         toolchain: stable
@@ -67,5 +70,5 @@ jobs:
     - uses: ruby/setup-ruby@v1
 
     - run: npm install
-    - run: pip install mypy python-dateutil
+    - run: pip3.6 install mypy python-dateutil
     - run: FIXTURE=${{ matrix.fixture }} npm test
