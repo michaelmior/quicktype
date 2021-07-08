@@ -73,4 +73,5 @@ jobs:
 
     - run: npm install
     - run: pip3.6 install mypy python-dateutil
+    - run: gem install bundler:1.16.1
     - run: FIXTURE=${{ matrix.fixture }} npm test
